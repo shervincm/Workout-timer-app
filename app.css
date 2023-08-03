@@ -41,7 +41,7 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
-    background-color: var(--background-colour-2);
+    background-color: rgb(70, 63, 63);
     padding: 1rem;
     border-radius: 5px;
     box-shadow: 0 15px 10px #333;
@@ -56,16 +56,16 @@ body {
   }
   label.roundTime {
     font-size: 1.1rem;
-    color: var(--background-colour-2);
+    color: var(white);
   }
   label.restTime {
     font-size: 1.1rem;
-    color: var(--background-colour-4);
+    color: var(white);
   }
   input {
     color: var(--background-colour-4);
   
-    font-size: 2rem !important;
+    font-size: 1.1rem !important;
     max-width: 120px;
     text-align: center;
   }
@@ -96,4 +96,12 @@ body {
   }
   .btn:active {
     transform: scale(0.95);
+  }
+
+  #displayTime {
+    
+  border-radius: 5px;
+  padding: 1rem;
+  box-shadow: inset 0 0 15px 3px #333;
+  color: var(--green);
   }
