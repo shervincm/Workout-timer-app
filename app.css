@@ -130,4 +130,12 @@ body {
     box-shadow: 0 15px 10px #333;
     transition: all 0.2s ease;
   }
+
+  .active{
+    font-size: 20vh;
+    display: flex;
+    box-shadow: 0 15px 10px #333;
+    transition: all 0.2s ease;
+  }
+
   
