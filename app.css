@@ -1,0 +1,99 @@
+:root {
+    --background-colour-1: #1e1e1e;
+    --background-colour-2: red;
+    --background-colour-3: yellow;
+    --background-colour-4: orange;
+    --background-colour-5: green;
+    --background-colour-6: white;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    height: 100vh;
+    margin: auto;
+    color: antiquewhite;
+    text-shadow: 4px 4px 5px #333;
+    background-color: var(--background-colour-1);
+    position: relative;
+}
+
+.workout-timer-container {
+    width: 600px;
+  }
+
+  .title {
+    font-size: 6rem;
+    text-align: center;
+    margin: 15vh 0;
+  }
+  
+  h4 {
+    text-align: center;
+  }
+
+  .inputs-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--background-colour-2);
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 15px 10px #333;
+    transition: all 0.2s ease;
+  }
+  .inputs-container:hover {
+    box-shadow: 0 10px 5px #333;
+    transition: all 0.2s ease;
+  }
+  .input-group {
+    padding: 1rem;
+  }
+  label.roundTime {
+    font-size: 1.1rem;
+    color: var(--background-colour-2);
+  }
+  label.restTime {
+    font-size: 1.1rem;
+    color: var(--background-colour-4);
+  }
+  input {
+    color: var(--background-colour-4);
+  
+    font-size: 2rem !important;
+    max-width: 120px;
+    text-align: center;
+  }
+  input::placeholder {
+    color: #999;
+  }
+  input#roundTime {
+    color: var(--background-colour-2);
+  }
+  input#roundTime:hover {
+    border-bottom: 1px solid var(--background-colour-2);
+  }
+  input#restTime:hover {
+    border-bottom: 1px solid var(--background-colour-4);
+  }
+  
+  .btn {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: var(--background-colour-5);
+    color: var(--background-colour-1);
+    font-size: 1.4rem;
+    font-weight: 500;
+    box-shadow: 0 15px 10px #333;
+    border: 2px solid #333;
+    cursor: pointer;
+  }
+  .btn:active {
+    transform: scale(0.95);
+  }
