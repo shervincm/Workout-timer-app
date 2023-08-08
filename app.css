@@ -1,141 +1,141 @@
-:root {
-    --background-colour-1: #1e1e1e;
-    --background-colour-2: red;
-    --background-colour-3: yellow;
-    --background-colour-4: orange;
-    --background-colour-5: #008000;
-    --background-colour-6: white;
-}
-
-.flex {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
+/* Body styles */
 body {
-    height: 100vh;
-    margin: auto;
-    color: antiquewhite;
-    text-shadow: 4px 4px 5px #333;
-    background-color: var(--background-colour-1);
-    position: relative;
+  /* Add your styles here */
+  background-image: url('https://e1.pxfuel.com/desktop-wallpaper/439/596/desktop-wallpaper-hanging-boxing-gloves-boxing.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
 }
 
-.workout-timer-container {
-    width: 600px;
-  }
+.workout-timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+/* Title styles */
+.title {
+  /* Add your styles here */
+  font-size: 8rem;
+  color: rgb(239, 94, 94);
+  text-shadow: 2px 2px 2px black;
+  display: flex;
+  justify-content: center;
+  margin:0;
+}
 
-  .title {
-    font-size: 6rem;
-    text-align: center;
-    margin: 15vh 0;
-  }
-  
-  h4 {
-    text-align: center;
-  }
+.instructions{
+  font-size: 2rem;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  display: flex;
+  justify-content: center;
+}
 
-  .inputs-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    background-color: rgb(70, 63, 63);
-    padding: 1rem;
-    border-radius: 5px;
-    box-shadow: 0 15px 10px #333;
-    transition: all 0.2s ease;
-  }
-  .inputs-container:hover {
-    box-shadow: 0 10px 5px #333;
-    transition: all 0.2s ease;
-  }
-  .input-group {
-    padding: 1rem;
-  }
-  label.roundTime {
-    font-size: 1.1rem;
-    color: var(white);
-  }
-  label.restTime {
-    font-size: 1.1rem;
-    color: var(white);
-  }
-  input {
-    color: var(--background-colour-4);
-  
-    font-size: 1.1rem !important;
-    max-width: 120px;
-    text-align: center;
-  }
-  input::placeholder {
-    color: #999;
-  }
-  input#roundTime {
-    color: var(--background-colour-2);
-  }
-  input#roundTime:hover {
-    border-bottom: 1px solid var(--background-colour-2);
-  }
-  input#restTime:hover {
-    border-bottom: 1px solid var(--background-colour-4);
-  }
-  
-  .btn {
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    background-color: var(--background-colour-5);
-    color: var(--background-colour-1);
-    font-size: 1.4rem;
-    font-weight: 500;
-    box-shadow: 0 15px 10px #333;
-    border: 2px solid #333;
-    cursor: pointer;
-  }
-  .btn:active {
-    transform: scale(0.95);
-  }
+/* Inputs container styles */
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  text-shadow: 2px 2px 2px black;
+  font-size: 2rem;
+  color: rgb(208, 181, 46);
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
 
-  #displayTime {
-    
+/* Input styles */
+input {
   border-radius: 5px;
-  padding: 1rem;
-  box-shadow: inset 0 0 15px 3px #333;
-  color: var(--green);
-  }
+  height: 25px;
+  font-size: 1.4rem;
+  margin-right: 10px
+}
 
-  .group {
-    height: 100vh;
-    justify-content: space-evenly;
-  }
-  .group {
-    display: none;
-  }
-  .active {
-    font-size: 30vh;
-    display: flex;
-  }
-  
-  .active > .round,
-  .active > .rest {
-    font-size: 10vh;
-  }
-  
-  .round-time,
-  .rest-time {
-    background-color: var(--bg-c-2);
-    border-radius: 5px;
-    box-shadow: 0 15px 10px #333;
-    transition: all 0.2s ease;
-  }
+.buttons {
+  display:flex
+}
 
-  .active{
-    font-size: 20vh;
-    display: flex;
-    box-shadow: 0 15px 10px #333;
-    transition: all 0.2s ease;
-  }
+/* Button styles */
+.btn {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: #008000;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 15px
+}
 
-  
+.btn:hover {
+  background-color: #006400;
+}
+
+.btn:active {
+  transform: scale(0.9);
+}
+
+.resetBtn{
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: #592323;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 15px
+}
+
+.resetBtn:hover {
+  background-color: #8b0000;
+}
+
+.resetBtn:active {
+  transform: scale(0.9);
+}
+
+.btn,
+.resetBtn {
+  display: inline-block;
+  margin-right: 10px; /* Adjust the margin as needed */
+}
+
+#minutes {
+font-size: 10rem;
+margin: 0;
+}
+
+#seconds {
+font-size: 10rem;
+margin: 0;
+}
+
+/* Timer styles */
+.active {
+  /* Add your styles here */
+}
+
+/* Animation styles */
+.animateSeconds {
+  /* Add your styles here */
+}
+
+.animateMinutes {
+  /* Add your styles here */
+}
+
+/* Start/Stop button styles */
+#start {
+  /* Add your styles here */
+}
+
+/* Rounds container styles */
+.rounds {
+  /* Add your styles here */
+}
+

@@ -1,10 +1,11 @@
-const myTime = setInterval(myTimer, 1000);
+// display current time
+// const myTime = setInterval(myTimer, 1000);
 
-function myTimer() {
-  const d = new Date();
-  const displayTime = d.toLocaleTimeString();
-  document.getElementById('displayTime').innerHTML = displayTime;
-}
+// function myTimer() {
+//   const d = new Date();
+//   const displayTime = d.toLocaleTimeString();
+//   document.getElementById('displayTime').innerHTML = displayTime;
+// }
 
 // Get Elements from the DOM
 const body = document.querySelector("body");
@@ -20,6 +21,7 @@ const roundsContainer = document.querySelector(".title");
 let interval;
 let restTime;
 let currentRound = 1;
+let isPaused = false; // Track if the countdown is paused
 
 const startTimer = () => {
   if (roundsCountInput.value === "" || roundTimeInput.value === "" || restTimeInput.value === "") {
@@ -32,16 +34,19 @@ const startTimer = () => {
   restTime = restTimeInput.value * 60;
   let time = 5;
 
-  startStopBtn.innerHTML = "Stop";
+  startStopBtn.innerHTML = "Pause";
   startStopBtn.style.backgroundColor = "#ff0000";
-  startStopBtn.onclick = newWorkout;
+  startStopBtn.onclick = toggleTimer; // Use toggleTimer function to start/stop the countdown
+
   const startWorkout = document.querySelector(".title");
 
   const startCountdown = document.querySelector(".title");
   getReady(startCountdown);
 
   interval = setInterval(() => {
-    getReady(startCountdown);
+    if (!isPaused) { // Only decrement the time if not paused
+      getReady(startCountdown);
+    }
   }, 1000);
 
   function getReady(element) {
@@ -65,30 +70,45 @@ const startTimer = () => {
   }
 
   function startTraining(element) {
-    function updateRoundTime() {
-      let seconds = roundTime % 60;
-      let minutes = Math.floor(roundTime / 60);
-      element.innerHTML = `
-        <div class="inputs-container flex">
-          <h4 class='title'>${currentRound}</h4>
-          <h2 id='minutes' class='active animateMinutes'>${minutes}</h2>
-          <h2 id='seconds' class='active animateSeconds'>${seconds}</h2>
-        </div>
-      `;
-      if (roundTime <= 0) {
-        clearInterval(interval);
-        if (currentRound === roundsCount) {
-          newWorkout();
-        } else {
-          rest(element);
+    let seconds = roundTime % 60;
+    let minutes = Math.floor(roundTime / 60);
+    element.innerHTML = `
+      <div class="inputs-container flex">
+        <h4 class='title'>Round ${currentRound}</h4>
+        <h2 id='minutes' class='active animateMinutes'>${minutes}</h2>
+        <h2 id='seconds' class='active animateSeconds'>${seconds}</h2>
+      </div>
+    `;
+  
+    const updateRoundTime = () => {
+      if (!isPaused) {
+        let seconds = roundTime % 60;
+        let minutes = Math.floor(roundTime / 60);
+        element.innerHTML = `
+          <div class="inputs-container flex">
+            <h4 class='title'>Round ${currentRound}</h4>
+            <h2 id='minutes' class='active animateMinutes'>${minutes}</h2>
+            <h2 id='seconds' class='active animateSeconds'>${seconds}</h2>
+          </div>
+        `;
+  
+        if (roundTime <= 0) {
+          clearInterval(interval);
+          if (currentRound === roundsCount) {
+            newWorkout();
+          } else {
+            rest(element);
+          }
+          return;
         }
-      } else {
+  
         roundTime--;
       }
-    }
+    };
   
-    updateRoundTime();
-    interval = setInterval(updateRoundTime, 1000);
+    updateRoundTime(); // Update the countdown display immediately
+  
+    interval = setInterval(updateRoundTime, 1000); // Start the countdown interval
   }
 
   function rest(element) {
@@ -103,29 +123,43 @@ const startTimer = () => {
     `;
   
     interval = setInterval(() => {
-      seconds--;
-      if (seconds < 0) {
-        minutes--;
-        seconds = 59;
-      }
-      element.innerHTML = `
-        <div class="inputs-container flex">
-          <h4 class='title'>Rest</h4>
-          <h2 id='minutes' class='active animateMinutes'>${minutes}</h2>
-          <h2 id='seconds' class='active animateSeconds'>${seconds}</h2>
-        </div>
-      `;
-  
-      if (minutes <= 0 && seconds <= 0) {
-        clearInterval(interval);
-        if (currentRound < roundsCount) {
-          currentRound++;
-          roundTime = roundTimeInput.value * 60; // Reset roundTime to original value
-          restTime = restTimeInput.value * 60; // Reset restTime to original value
-          startTraining(element);
-        } 
+      if (!isPaused) { // Only decrement the time if not paused
+        seconds--;
+        if (seconds < 0) {
+          minutes--;
+          seconds = 59;
+        }
+        element.innerHTML = `
+          <div class="inputs-container flex">
+            <h4 class='title'>Rest</h4>
+            <h2 id='minutes' class='active animateMinutes'>${minutes}</h2>
+            <h2 id='seconds' class='active animateSeconds'>${seconds}</h2>
+          </div>
+        `;
+    
+        if (minutes <= 0 && seconds <= 0) {
+          clearInterval(interval);
+          if (currentRound < roundsCount) {
+            currentRound++;
+            roundTime = roundTimeInput.value * 60; // Reset roundTime to original value
+            restTime = restTimeInput.value * 60; // Reset restTime to original value
+            startTraining(element);
+          } 
+        }
       }
     }, 1000);
+  }
+};
+
+const toggleTimer = () => {
+  if (isPaused) {
+    isPaused = false; // Resume the countdown    
+    startStopBtn.innerHTML = "Pause";
+    startStopBtn.style.backgroundColor = "#ff0000";
+  } else {
+    isPaused = true; // Pause the countdown
+    startStopBtn.innerHTML = "Resume";
+    startStopBtn.style.backgroundColor = "#008000";
   }
 };
 
@@ -143,5 +177,9 @@ const newWorkout = () => {
   // Reset workout status message
   roundsContainer.innerHTML = "Workout Complete!";
   
-  // window.location.reload();
+  
+};
+
+const resetWorkout = () => {
+  window.location.reload();
 };
