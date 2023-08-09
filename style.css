@@ -135,19 +135,19 @@ input {
 .btn,
 .resetBtn {
   display: inline-block;
-  margin-right: 10px; /* Adjust the margin as needed */
+  margin-right: 10px; 
 }
 
 #minutes {
 font-size: 40px;
 margin: 0;
-border: solid 2px rgb(239, 94, 94);
+
 }
 
 #seconds {
 font-size: 40px;
 margin: 0;
-border: solid 2px rgb(239, 94, 94);
+
 }
 
  @media (min-width: 464px )
