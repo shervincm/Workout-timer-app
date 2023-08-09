@@ -18,6 +18,12 @@ const restTimeInput = document.getElementById("restTime");
 const startStopBtn = document.getElementById("start");
 const roundsContainer = document.querySelector(".title");
 
+// Get audio alerts
+const getReadyAlert = document.getElementById("getReady");
+const roundStartAlert = document.getElementById("roundStart");
+const restAlert = document.getElementById("restRound");
+const workoutCompleteAlert = document.getElementById("endWorkout");
+
 let interval;
 let restTime;
 let currentRound = 1;
@@ -48,7 +54,17 @@ const startTimer = () => {
       getReady(startCountdown);
     }
   }, 1000);
+  
 
+  function setAlert(alert) {
+       alert.play();
+       setTimeout(() => {
+          alert.pause();
+          alert.currentTime = 0;
+        }, 2900);
+  }
+
+  setAlert(getReadyAlert);
   function getReady(element) {
     let seconds = time % 60;
     element.innerHTML = `
@@ -70,6 +86,7 @@ const startTimer = () => {
   }
 
   function startTraining(element) {
+    setAlert(roundStartAlert);
     let seconds = roundTime % 60;
     let minutes = Math.floor(roundTime / 60);
     element.innerHTML = `
@@ -112,6 +129,7 @@ const startTimer = () => {
   }
 
   function rest(element) {
+    setAlert(restAlert);
     let seconds = restTime % 60;
     let minutes = Math.floor(restTime / 60);
     element.innerHTML = `
@@ -177,8 +195,17 @@ const newWorkout = () => {
   // Reset workout status message
   roundsContainer.innerHTML = "Workout Complete!";
   
-  
+  setAlert(workoutCompleteAlert);
 };
+
+// Function to play audio alert
+function setAlert(alert) {
+  alert.play();
+  setTimeout(() => {
+    alert.pause();
+    alert.currentTime = 0;
+  }, 2900);
+}
 
 const resetWorkout = () => {
   window.location.reload();
