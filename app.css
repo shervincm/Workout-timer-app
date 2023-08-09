@@ -88,7 +88,7 @@ input {
   display:flex;
   /* border: solid 2px rgb(239, 94, 94); */
   /* margin: 50px 0 0 0  */
-  grid-template-columns: 30px;
+  gap: 30px;
 }
 
 /* Button styles */
@@ -150,14 +150,14 @@ margin: 0;
 border: solid 2px rgb(239, 94, 94);
 }
 
-@media (min-width: 464px )
+ @media (min-width: 464px )
 {
   .instructions {
     font-size: 22px;
   }
   
   label {
-    width: 100%;
+    width: 92%;
     font-size: 18px;
   }
   
@@ -165,7 +165,7 @@ border: solid 2px rgb(239, 94, 94);
     height: 25px;
     font-size: 16px;
   }
-}
+} 
 
 @media (min-width: 525px )
 {
@@ -178,7 +178,7 @@ border: solid 2px rgb(239, 94, 94);
   }
   
   label {
-    width: 100%;
+    width: 84%;
     font-size: 22px;
   }
   
@@ -207,37 +207,8 @@ border: solid 2px rgb(239, 94, 94);
   }
   
   label {
-    width: 100%;
+    width: 76%;
     font-size: 25px;
-  }
-  
-  input {
-    height: 25px;
-    font-size: 24px;
-  }
-
-  #minutes {
-    font-size: 60px;
-    }
-    
-    #seconds {
-    font-size: 60px;
-    }
-}
-
-@media (min-width: 691px )
-{
-  .title {
-    font-size: 58px;
-  }
-
-  .instructions {
-    font-size: 31px;
-  }
-  
-  label {
-    width: 100%;
-    font-size: 27px;
   }
   
   input {
@@ -254,24 +225,24 @@ border: solid 2px rgb(239, 94, 94);
     }
 }
 
-@media (min-width: 786px )
+@media (min-width: 720px )
 {
   .title {
     font-size: 61px;
   }
 
   .instructions {
-    font-size: 36px;
+    font-size: 32px;
   }
   
   label {
-    width: 100%;
-    font-size: 32px;
+    width: 68%;
+    font-size: 27px;
   }
   
   input {
     height: 25px;
-    font-size: 30px;
+    font-size: 27px;
   }
 
   #minutes {
@@ -290,17 +261,17 @@ border: solid 2px rgb(239, 94, 94);
   }
 
   .instructions {
-    font-size: 38px;
+    font-size: 35px;
   }
   
   label {
-    width: 100%;
-    font-size: 35px;
+    width: 50%;
+    font-size: 29px;
   }
   
   input {
     height: 28px;
-    font-size: 33px;
+    font-size: 29px;
   }
 
   #minutes {
@@ -319,17 +290,17 @@ border: solid 2px rgb(239, 94, 94);
   }
 
   .instructions {
-    font-size: 42px;
+    font-size: 35px;
   }
   
   label {
-    width: 100%;
-    font-size: 40px;
+    width: 40%;
+    font-size: 32px;
   }
   
   input {
     height: 30px;
-    font-size: 38px;
+    font-size: 32px;
   }
 
   #minutes {
@@ -351,7 +322,7 @@ border: solid 2px rgb(239, 94, 94);
       height: 120px;
       font-size: 35px;
     }
-}
+} 
 
 @media (min-width: 1172px )
 {
@@ -360,17 +331,17 @@ border: solid 2px rgb(239, 94, 94);
   }
 
   .instructions {
-    font-size: 50px;
+    font-size: 35px;
   }
   
   label {
-    width: 100%;
-    font-size: 48px;
+    width: 45%;
+    font-size: 32px;
   }
   
   input {
     height: 33px;
-    font-size: 46px;
+    font-size: 32px;
   }
 
   #minutes {
@@ -394,24 +365,24 @@ border: solid 2px rgb(239, 94, 94);
     }
 }
 
-@media (min-width: 1423px )
+@media (min-width: 1470px )
 {
   .title {
     font-size: 108px;
   }
 
   .instructions {
-    font-size: 58px;
+    font-size: 42px;
   }
   
   label {
-    width: 100%;
-    font-size: 56px;
+    width: 35%;
+    font-size: 36px;
   }
   
   input {
     height: 40px;
-    font-size: 54px;
+    font-size: 36px;
   }
 
   #minutes {
@@ -435,24 +406,24 @@ border: solid 2px rgb(239, 94, 94);
     }
 }
 
-@media (min-width: 1871px )
+@media (min-width: 1744px )
 {
   .title {
     font-size: 123px;
   }
 
   .instructions {
-    font-size: 72px;
+    font-size: 50px;
   }
   
   label {
-    width: 100%;
-    font-size: 70px;
+    width: 30%;
+    font-size: 38px;
   }
 
   input {
     height: 50px;
-    font-size: 68px;
+    font-size: 38px;
   }
 
   #minutes {
@@ -479,21 +450,21 @@ border: solid 2px rgb(239, 94, 94);
 @media (min-width: 2221px )
 {
   .title {
-    font-size: 184px;
+    font-size: 144px;
   }
 
   .instructions {
-    font-size: 83px;
+    font-size: 60px;
   }
   
   label {
-    width: 100%;
-    font-size: 81px;
+    width: 20%;
+    font-size: 40px;
   }
   
   input {
     height: 64px;
-    font-size: 79px
+    font-size: 40px
   }
 
   #minutes {
