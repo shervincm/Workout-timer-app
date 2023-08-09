@@ -1,3 +1,7 @@
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 /* Body styles */
 body {
   /* Add your styles here */
@@ -5,33 +9,41 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-
 }
 
 .workout-timer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   height: 100vh;
+  margin: 0;
+  /* border: solid 2px rgb(239, 94, 94); */
+  /* position: relative; */
 }
 /* Title styles */
 .title {
   /* Add your styles here */
-  font-size: 8rem;
+  font-size: 50px;
   color: rgb(239, 94, 94);
   text-shadow: 2px 2px 2px black;
   display: flex;
   justify-content: center;
-  margin:0;
+  align-items: center;
+  margin: 45px 0 0 0;
+  /* border: solid 2px rgb(239, 94, 94); */
 }
 
 .instructions{
-  font-size: 2rem;
+  font-size: 20px;
   color: white;
   text-shadow: 2px 2px 2px black;
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin: 0 10px 20px 20px;
+  height: 15vh;
+  /* border: solid 2px rgb(239, 94, 94); */
 }
 
 /* Inputs container styles */
@@ -39,23 +51,44 @@ body {
   display: flex;
   flex-direction: column;
   text-shadow: 2px 2px 2px black;
-  font-size: 2rem;
+  font-size: 17px;
   color: rgb(208, 181, 46);
   align-items: center;
   justify-content: center;
   margin: 0;
+  width: 100vw;
+  /* border: solid 2px rgb(239, 94, 94); */
+}
+
+.input-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 10;
+  width: 90vw;
+
+}
+
+label {
+  width: 80vw;
+  
 }
 
 /* Input styles */
 input {
   border-radius: 5px;
   height: 25px;
-  font-size: 1.4rem;
-  margin-right: 10px
+  font-size: 12px;
+  margin-right: 10px;
+  
 }
 
 .buttons {
-  display:flex
+  display:flex;
+  /* border: solid 2px rgb(239, 94, 94); */
+  /* margin: 50px 0 0 0  */
+  grid-template-columns: 30px;
 }
 
 /* Button styles */
@@ -106,36 +139,380 @@ input {
 }
 
 #minutes {
-font-size: 10rem;
+font-size: 40px;
 margin: 0;
+border: solid 2px rgb(239, 94, 94);
 }
 
 #seconds {
-font-size: 10rem;
+font-size: 40px;
 margin: 0;
+border: solid 2px rgb(239, 94, 94);
 }
 
-/* Timer styles */
-.active {
-  /* Add your styles here */
+@media (min-width: 464px )
+{
+  .instructions {
+    font-size: 22px;
+  }
+  
+  label {
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  input {
+    height: 25px;
+    font-size: 16px;
+  }
 }
 
-/* Animation styles */
-.animateSeconds {
-  /* Add your styles here */
+@media (min-width: 525px )
+{
+  .title {
+    font-size: 54px;
+  }
+
+  .instructions {
+    font-size: 24px;
+  }
+  
+  label {
+    width: 100%;
+    font-size: 22px;
+  }
+  
+  input {
+    height: 25px;
+    font-size: 20px;
+  }
+
+  #minutes {
+    font-size: 60px;
+    }
+    
+    #seconds {
+    font-size: 60px;
+    }
 }
 
-.animateMinutes {
-  /* Add your styles here */
+@media (min-width: 621px )
+{
+  .title {
+    font-size: 56px;
+  }
+
+  .instructions {
+    font-size: 28px;
+  }
+  
+  label {
+    width: 100%;
+    font-size: 25px;
+  }
+  
+  input {
+    height: 25px;
+    font-size: 24px;
+  }
+
+  #minutes {
+    font-size: 60px;
+    }
+    
+    #seconds {
+    font-size: 60px;
+    }
 }
 
-/* Start/Stop button styles */
-#start {
-  /* Add your styles here */
+@media (min-width: 691px )
+{
+  .title {
+    font-size: 58px;
+  }
+
+  .instructions {
+    font-size: 31px;
+  }
+  
+  label {
+    width: 100%;
+    font-size: 27px;
+  }
+  
+  input {
+    height: 25px;
+    font-size: 25px;
+  }
+
+  #minutes {
+    font-size: 60px;
+    }
+    
+    #seconds {
+    font-size: 60px;
+    }
 }
 
-/* Rounds container styles */
-.rounds {
-  /* Add your styles here */
+@media (min-width: 786px )
+{
+  .title {
+    font-size: 61px;
+  }
+
+  .instructions {
+    font-size: 36px;
+  }
+  
+  label {
+    width: 100%;
+    font-size: 32px;
+  }
+  
+  input {
+    height: 25px;
+    font-size: 30px;
+  }
+
+  #minutes {
+    font-size: 75px;
+    }
+    
+    #seconds {
+    font-size: 75px;
+    }
 }
 
+@media (min-width: 830px )
+{
+  .title {
+    font-size: 65px;
+  }
+
+  .instructions {
+    font-size: 38px;
+  }
+  
+  label {
+    width: 100%;
+    font-size: 35px;
+  }
+  
+  input {
+    height: 28px;
+    font-size: 33px;
+  }
+
+  #minutes {
+    font-size: 90px;
+    }
+    
+    #seconds {
+    font-size: 90px;
+    }
+}
+
+@media (min-width: 1051px )
+{
+  .title {
+    font-size: 86px;
+  }
+
+  .instructions {
+    font-size: 42px;
+  }
+  
+  label {
+    width: 100%;
+    font-size: 40px;
+  }
+  
+  input {
+    height: 30px;
+    font-size: 38px;
+  }
+
+  #minutes {
+    font-size: 90px;
+    }
+    
+    #seconds {
+    font-size: 90px;
+    }
+    
+    .btn {
+      width: 120px;
+      height: 120px;
+      font-size: 35px;
+    }
+
+    .resetBtn{
+      width: 120px;
+      height: 120px;
+      font-size: 35px;
+    }
+}
+
+@media (min-width: 1172px )
+{
+  .title {
+    font-size: 95px;
+  }
+
+  .instructions {
+    font-size: 50px;
+  }
+  
+  label {
+    width: 100%;
+    font-size: 48px;
+  }
+  
+  input {
+    height: 33px;
+    font-size: 46px;
+  }
+
+  #minutes {
+    font-size: 90px;
+    }
+    
+    #seconds {
+    font-size: 90px;
+    }
+    
+    .btn {
+      width: 150px;
+      height: 150px;
+      font-size: 40px;
+    }
+
+    .resetBtn{
+      width: 150px;
+      height: 150px;
+      font-size: 40px;
+    }
+}
+
+@media (min-width: 1423px )
+{
+  .title {
+    font-size: 108px;
+  }
+
+  .instructions {
+    font-size: 58px;
+  }
+  
+  label {
+    width: 100%;
+    font-size: 56px;
+  }
+  
+  input {
+    height: 40px;
+    font-size: 54px;
+  }
+
+  #minutes {
+    font-size: 90px;
+    }
+    
+    #seconds {
+    font-size: 90px;
+    }
+    
+    .btn {
+      width: 150px;
+      height: 150px;
+      font-size: 40px;
+    }
+
+    .resetBtn{
+      width: 150px;
+      height: 150px;
+      font-size: 40px;
+    }
+}
+
+@media (min-width: 1871px )
+{
+  .title {
+    font-size: 123px;
+  }
+
+  .instructions {
+    font-size: 72px;
+  }
+  
+  label {
+    width: 100%;
+    font-size: 70px;
+  }
+
+  input {
+    height: 50px;
+    font-size: 68px;
+  }
+
+  #minutes {
+    font-size: 90px;
+    }
+    
+    #seconds {
+    font-size: 90px;
+    }
+    
+    .btn {
+      width: 150px;
+      height: 150px;
+      font-size: 40px;
+    }
+
+    .resetBtn{
+      width: 150px;
+      height: 150px;
+      font-size: 40px;
+    }
+}
+
+@media (min-width: 2221px )
+{
+  .title {
+    font-size: 184px;
+  }
+
+  .instructions {
+    font-size: 83px;
+  }
+  
+  label {
+    width: 100%;
+    font-size: 81px;
+  }
+  
+  input {
+    height: 64px;
+    font-size: 79px
+  }
+
+  #minutes {
+    font-size: 100px;
+    }
+    
+    #seconds {
+    font-size: 100px;
+    }
+    
+    .btn {
+      width: 200px;
+      height: 200px;
+      font-size: 45px;
+    }
+
+    .resetBtn{
+      width: 200px;
+      height: 200px;
+      font-size: 45px;
+    }
+}
