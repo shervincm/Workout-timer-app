@@ -150,10 +150,6 @@ margin: 0;
 
 }
 
-#next {
-  display: none
-}
-
  @media (min-width: 464px )
 {
   .instructions {

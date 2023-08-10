@@ -66,24 +66,6 @@ const startTimer = () => {
 
   setAlert(getReadyAlert);
 
-  function showNextButton() {
-    const nextButton = document.getElementById("next");
-    nextButton.style.display = "block"; // Show the "Next" button
-  
-    setTimeout(() => {
-      const clickEvent = new MouseEvent("click", {
-        view: window,
-        bubbles: true,
-        cancelable: true
-      });
-  
-      nextButton.dispatchEvent(clickEvent); // Simulate a click on the "Next" button
-      console.log("clicked");
-      // Hide the "Next" button after the simulated click
-      nextButton.style.display = "none";
-    }, 100); // Delay the click simulation by 1 second
-  }
-
   function getReady(element) {
     let seconds = time % 60;
     element.innerHTML = `
@@ -105,7 +87,6 @@ const startTimer = () => {
   }
 
   function startTraining(element) {
-    showNextButton();
     setAlert(roundStartAlert);
     let seconds = roundTime % 60;
     let minutes = Math.floor(roundTime / 60);
