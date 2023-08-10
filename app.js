@@ -134,7 +134,7 @@ const startTimer = () => {
     let minutes = Math.floor(restTime / 60);
     element.innerHTML = `
     <div class="inputs-container flex">
-    <h4 class='title'>Round ${currentRound}</h4>
+    <h4 class='title'>Rest ${currentRound}</h4>
     ${minutes > 0 ? `<h2 id='minutes' class='active animateMinutes'>${minutes}</h2>` : ''}
     <h2 id='seconds' class='active animateSeconds'>${seconds}</h2>
   </div>
@@ -149,7 +149,7 @@ const startTimer = () => {
         }
         element.innerHTML = `
         <div class="inputs-container flex">
-        <h4 class='title'>Round ${currentRound}</h4>
+        <h4 class='title'>Rest ${currentRound}</h4>
         ${minutes > 0 ? `<h2 id='minutes' class='active animateMinutes'>${minutes}</h2>` : ''}
         <h2 id='seconds' class='active animateSeconds'>${seconds}</h2>
       </div>
