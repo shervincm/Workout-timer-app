@@ -102,12 +102,12 @@ const startTimer = () => {
         let seconds = roundTime % 60;
         let minutes = Math.floor(roundTime / 60);
         element.innerHTML = `
-          <div class="inputs-container flex">
-            <h4 class='title'>Round ${currentRound}</h4>
-            <h2 id='minutes' class='active animateMinutes'>${minutes}</h2>
-            <h2 id='seconds' class='active animateSeconds'>${seconds}</h2>
-          </div>
-        `;
+        <div class="inputs-container flex">
+        <h4 class='title'>Round ${currentRound}</h4>
+        ${minutes > 0 ? `<h2 id='minutes' class='active animateMinutes'>${minutes}</h2>` : ''}
+        <h2 id='seconds' class='active animateSeconds'>${seconds}</h2>
+      </div>
+    `;
   
         if (roundTime <= 0) {
           clearInterval(interval);
@@ -133,12 +133,12 @@ const startTimer = () => {
     let seconds = restTime % 60;
     let minutes = Math.floor(restTime / 60);
     element.innerHTML = `
-      <div class="inputs-container flex">
-        <h4 class='title'>Rest</h4>
-        <h2 id='minutes' class='active animateMinutes'>${minutes}</h2>
-        <h2 id='seconds' class='active animateSeconds'>${seconds}</h2>
-      </div>
-    `;
+    <div class="inputs-container flex">
+    <h4 class='title'>Round ${currentRound}</h4>
+    ${minutes > 0 ? `<h2 id='minutes' class='active animateMinutes'>${minutes}</h2>` : ''}
+    <h2 id='seconds' class='active animateSeconds'>${seconds}</h2>
+  </div>
+`;
   
     interval = setInterval(() => {
       if (!isPaused) { // Only decrement the time if not paused
@@ -148,12 +148,12 @@ const startTimer = () => {
           seconds = 59;
         }
         element.innerHTML = `
-          <div class="inputs-container flex">
-            <h4 class='title'>Rest</h4>
-            <h2 id='minutes' class='active animateMinutes'>${minutes}</h2>
-            <h2 id='seconds' class='active animateSeconds'>${seconds}</h2>
-          </div>
-        `;
+        <div class="inputs-container flex">
+        <h4 class='title'>Round ${currentRound}</h4>
+        ${minutes > 0 ? `<h2 id='minutes' class='active animateMinutes'>${minutes}</h2>` : ''}
+        <h2 id='seconds' class='active animateSeconds'>${seconds}</h2>
+      </div>
+    `;
     
         if (minutes <= 0 && seconds <= 0) {
           clearInterval(interval);
